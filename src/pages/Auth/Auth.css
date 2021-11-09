@@ -1,0 +1,23 @@
+#auth .auth-row {
+  min-height: 100vh;
+}
+.auth-col {
+  margin: 10px auto;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px gray;
+}
+.form-title {
+  text-align: center;
+}
+.form-label {
+  text-transform: capitalize;
+}
+[class*="-btn"] {
+  width: 100%;
+  height: 50px;
+  margin: 10px auto;
+}
+.pointer {
+  cursor: pointer;
+}
