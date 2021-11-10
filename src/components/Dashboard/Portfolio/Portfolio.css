@@ -1,0 +1,27 @@
+.list-card:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.list-card-title {
+  color: #999898;
+}
+.basket .d-flex {
+  gap: 0.8rem;
+}
+.list-card-value {
+  color: #000000;
+}
+.rounded-c {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+}
+
+h5,
+p {
+  margin-bottom: 0;
+  margin-bottom: 0.2rem;
+}
+
+.percentage {
+  color: #52cd6d;
+}

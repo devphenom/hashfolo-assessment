@@ -1,7 +1,6 @@
 // libraries & components
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import Input from "../../components/Dash/Input";
+import Input from "../../components/Input";
 import "./Auth.css";
 
 // default form data
