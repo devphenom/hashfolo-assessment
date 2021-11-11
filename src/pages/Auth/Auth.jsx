@@ -1,6 +1,10 @@
 // libraries & components
+import axios from "axios";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import Input from "../../components/Input";
+import { register } from "../../redux/actions/auth";
 import "./Auth.css";
 
 // default form data
@@ -15,18 +19,33 @@ const Auth = () => {
   const [formData, setFormData] = useState(initialState);
   const [showPassword, setShowPassword] = useState(false);
   const [isSignup, setIsSignup] = useState(false);
-  // functions
-  const handleSubmit = (e) => {
-    e.preventDefault();
 
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  // functions
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     console.log(formData);
+    // try {
+    //   const response = await axios.post(
+    //     "http://localhost:8000/auth/register",
+    //     formData
+    //   );
+    //   console.log(response);
+    // } catch (error) {
+    //   console.log(error.response.data.message);
+    // }
+
+    if (isSignup) {
+      dispatch(register(formData, navigate));
+    }
   };
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
   const handleShowPassword = () =>
-    setShowPassword((prevShowPassword) => !showPassword);
+    setShowPassword((prevShowPassword) => !prevShowPassword);
   const handleAuthMode = () => setIsSignup((prevIsSignup) => !prevIsSignup);
   return (
     <div id="auth" class="container-fluid">

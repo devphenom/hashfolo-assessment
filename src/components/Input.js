@@ -19,6 +19,7 @@ const Input = (props) => {
         <input
           type={type}
           aria-label={name}
+          name={name}
           placeholder={placeholder}
           class="form-control"
           aria-describedby="show-password"
