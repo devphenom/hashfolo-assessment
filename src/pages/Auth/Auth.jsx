@@ -1,10 +1,9 @@
 // libraries & components
-import axios from "axios";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Input from "../../components/Input";
-import { register } from "../../redux/actions/auth";
+import { register, login } from "../../redux/actions/auth";
 import "./Auth.css";
 
 // default form data
@@ -26,18 +25,11 @@ const Auth = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(formData);
-    // try {
-    //   const response = await axios.post(
-    //     "http://localhost:8000/auth/register",
-    //     formData
-    //   );
-    //   console.log(response);
-    // } catch (error) {
-    //   console.log(error.response.data.message);
-    // }
 
     if (isSignup) {
       dispatch(register(formData, navigate));
+    } else {
+      dispatch(login(formData, navigate));
     }
   };
   const handleChange = (e) => {

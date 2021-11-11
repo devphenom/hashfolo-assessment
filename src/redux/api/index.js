@@ -15,5 +15,5 @@ API.interceptors.request.use((req) => {
 export const fetchBasket = () => API.get("/baskets");
 export const fetchBasketData = () => API.get("/bdata");
 
-export const signIn = (formData) => API.post(`/user/signin`, formData);
+export const login = (formData) => API.post(`/auth/login`, formData);
 export const register = (formData) => API.post(`/auth/register`, formData);

@@ -1,7 +1,17 @@
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 // css
-
 import "./Navbar.css";
+
 const Navbar = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const logout = () => {
+    dispatch({ type: "LOGOUT" });
+    navigate("/");
+  };
+
   return (
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid px-5">
@@ -23,7 +33,7 @@ const Navbar = () => {
             {/*  */}
           </ul>
           <h6 className="mx-4 mb-0">Ali Abdulsamad</h6>
-          <button class="btn btn-danger" type="submit">
+          <button class="btn btn-danger" type="submit" onClick={logout}>
             Logout
           </button>
         </div>
