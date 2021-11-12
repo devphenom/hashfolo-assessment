@@ -49,11 +49,11 @@ export const Basket = (props) => {
 
 export const BasketData = ({ type, title, value }) => {
   return (
-    <div className="col-12 col-md-2  text-center">
-      <p className="list-card-title">{title}</p>
+    <div className="col-12 col-md-2  text-center d-flex d-md-block">
+      <p className="list-card-title">{title}: </p>
       {type === "returns" ? (
         <p className="list-card-value percentage">
-          {value ? `${value}%` : "-"}
+          {value ? ` ${value}%` : "-"}
         </p>
       ) : (
         <p className="list-card-value"> {value ? `₹ ${value}` : "-"}</p>

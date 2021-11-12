@@ -12,7 +12,7 @@ const Dashboard = () => {
     <>
       <Navbar user={user} />
       <Routes>
-        <Route exact path={`/`} element={<Portfolio />} />
+        <Route exact path={`/portfolio`} element={<Portfolio />} />
       </Routes>
     </>
   );
