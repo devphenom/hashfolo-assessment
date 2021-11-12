@@ -9,7 +9,7 @@ export const login = (formData, navigate) => async (dispatch) => {
     navigate("/dashboard/portfolio");
   } catch (error) {
     if (error.response) {
-      console.log(error.response.data.message);
+      console.log(error.response);
     } else {
       console.log(error);
     }
