@@ -24,7 +24,6 @@ const Auth = () => {
   // functions
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
 
     if (isSignup) {
       dispatch(register(formData, navigate));
@@ -40,8 +39,8 @@ const Auth = () => {
     setShowPassword((prevShowPassword) => !prevShowPassword);
   const handleAuthMode = () => setIsSignup((prevIsSignup) => !prevIsSignup);
   return (
-    <div id="auth" class="container-fluid">
-      <div class="row auth-row">
+    <div id="auth" className="container-fluid">
+      <div className="row auth-row">
         <div className="col-md-6 auth-col">
           {/* Title */}
           <div className="form-title">

@@ -12,7 +12,7 @@ export const BasketImage = ({ image }) => {
 
   return (
     //   col-1
-    <div className="col-12 col-md-3 my-md-0">
+    <div className="col-12 col-md-3 my-md-0 text-center">
       <img
         src={image}
         onError={defaultImage}

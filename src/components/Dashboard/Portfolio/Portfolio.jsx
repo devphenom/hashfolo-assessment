@@ -9,6 +9,7 @@ const Portfolio = () => {
 
   useEffect(() => {
     dispatch(fetchData());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const baskets = useSelector((state) => state.basket);

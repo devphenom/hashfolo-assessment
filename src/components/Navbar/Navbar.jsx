@@ -1,9 +1,11 @@
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 // css
 import "./Navbar.css";
 
-const Navbar = () => {
+const Navbar = ({ user }) => {
+  const [navOpen, setNavOpen] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -12,11 +14,14 @@ const Navbar = () => {
     navigate("/");
   };
 
+  console.log(user?.data?.email);
+
   return (
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid px-5">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <div className="container-fluid px-5">
         <button
-          class="navbar-toggler"
+          onClick={() => setNavOpen((prevNavOpen) => !prevNavOpen)}
+          className={`navbar-toggler ${navOpen ? "" : "collapsed"}`}
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent"
@@ -24,16 +29,21 @@ const Navbar = () => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item nav-items">Portfolio</li>
-            <li class="nav-item nav-items">Watchlist</li>
+        <div
+          className={`collapse navbar-collapse ${navOpen ? "show" : ""} `}
+          id="navbarSupportedContent"
+        >
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <li className="nav-item nav-items">Portfolio</li>
+            <li className="nav-item nav-items">Watchlist</li>
             {/*  */}
           </ul>
-          <h6 className="mx-4 mb-0">Ali Abdulsamad</h6>
-          <button class="btn btn-danger" type="submit" onClick={logout}>
+          <h6 className="mx-4 mb-0">
+            {user?.data?.email.split("@")[0].toUpperCase() || "User"}
+          </h6>
+          <button className="btn btn-danger" type="submit" onClick={logout}>
             Logout
           </button>
         </div>

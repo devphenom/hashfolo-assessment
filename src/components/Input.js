@@ -12,7 +12,7 @@ const Input = (props) => {
   } = props;
   return (
     <div className="mb-3">
-      <label for={name} class="form-label">
+      <label htmlFor={name} className="form-label">
         {label}
       </label>
       <div className="input-group mb-1">
@@ -21,7 +21,7 @@ const Input = (props) => {
           aria-label={name}
           name={name}
           placeholder={placeholder}
-          class="form-control"
+          className="form-control"
           aria-describedby="show-password"
           {...rest}
         />
@@ -36,7 +36,7 @@ const Input = (props) => {
           </button>
         )}
       </div>
-      <div id="emailHelp" class="form-text">
+      <div id="emailHelp" className="form-text">
         Enter your fullname
       </div>
     </div>

@@ -3,8 +3,6 @@ import Auth from "./pages/Auth/Auth.jsx";
 import Dashboard from "./pages/Dashboard/Dashboard.jsx";
 // css
 import "./App.css";
-
-const Error = () => <div>error</div>;
 const App = () => {
   return (
     <Router>
